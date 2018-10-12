@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <!-- Add CSS file up here -->
+  </head>
+
+  <body>
+    <h1> ADD DEFAULT HEADER/NAV BAR UP HERE! </h1>
+
+    <form>
+      Item Name: <br />
+        <input type="text" name="itemName"><br />
+      
+      Item Type: <br />
+        <input type="radio" name="itemType" value="book" checked> Book <br />
+        <input type="radio" name="itemType" value="furniture"> Furniture <br />
+        <input type="radio" name="itemType" value="other"> Other <br />
+      
+      ISBN Number: <br /> <!-- Hidden with JS unless book is selected -->
+        <input type="text" name="ISBN" maxlength="13" size="13"><br />
+
+      Item Description: <br />
+             <textarea class=itemDescription" rows=10 cols=50>Item description goes here... </textarea> <br />
+             <!-- Add JS to make text disappear when you click on and reappear if the box is empty when you click off -->
+      <input type="submit" name="submitButton"> <br />
+     </form>
+
+  </body>
+  <!--JS will go here-->
+</html>
