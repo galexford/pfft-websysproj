@@ -1,0 +1,3 @@
+bookDaddy.controller("homeCtrl", function () {
+
+});

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookDaddyApp">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookDaddy</title>
+</head>
+
+
+<body>
+    <div id="page">
+        <!-- <div ng-include="'views/layouts/header.html'"></div> -->
+
+        <ng-view></ng-view>
+
+        <!-- <div ng-include="'views/layouts/footer.html'"></div> -->
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="https://code.angularjs.org/1.7.0/angular.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.7.0/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
+
+    <!-- Our Main Constrollers -->
+    <script type="text/javascript" src="controllers/router.js"></script>
+    <script type="text/javascript" src="controllers/front/headerCtrl.js"></script>
+    <script type="text/javascript" src="controllers/front/homeCtrl.js"></script>
+
+
+</body>
+
+
+</html>
