@@ -8,3 +8,4 @@ function showISBN() {
 function noShowISBN() {
 	isbn.style.display = 'none';
 }
+
