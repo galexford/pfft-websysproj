@@ -3,29 +3,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
-
   <body>
-    <h1> ADD DEFAULT HEADER/NAV BAR UP HERE! </h1>
+    <h1> ADD DEFAULT HEADER/NAV BAR UP HERE! </h1>s
 
     <form>
       Item Name: <br />
         <input type="text" name="itemName"><br />
       
       Item Type: <br />
-        <input type="radio" name="itemType" value="book" checked> Book <br />
-        <input type="radio" name="itemType" value="furniture"> Furniture <br />
-        <input type="radio" name="itemType" value="other"> Other <br />
+        <input id="bookButton" type="radio" name="itemType" value="book" onclick="showISBN();"> Book <br />
+        <input type="radio" name="itemType" value="furniture" onclick="noShowISBN();"> Furniture <br />
+        <input type="radio" name="itemType" value="other" onclick="noShowISBN();"> Other <br />
       
-      ISBN Number: <br /> <!-- Hidden with JS unless book is selected -->
+      <div id="isbn" style="display:none;"> ISBN Number: <br /> <!-- Hidden with JS unless book is selected -->
         <input type="text" name="ISBN" maxlength="13" size="13"><br />
-
+      </div>
       Item Description: <br />
-             <textarea class=itemDescription" rows=10 cols=50>Item description goes here... </textarea> <br />
+             <textarea class=itemDescription" rows=10 cols=50">Item description goes here... </textarea> <br />
              <!-- Add JS to make text disappear when you click on and reappear if the box is empty when you click off -->
       <input type="submit" name="submitButton"> <br />
      </form>
-
   </body>
-  <!--JS will go here-->
+  <script type="text/javascript" src="../static/js/addListing.js"> </script>
 </html>
