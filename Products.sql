@@ -27,6 +27,16 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `Products`
 --
+CREATE TABLE 'Users' (
+	'fname' text NOT NULL,
+	'lname' text NOT NULL,
+	'picture' text NOT NULL,
+	'dob' text NOT NULL,
+	'email' text NOT NULL,
+	'pass' text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+COMMIT;
+
 
 CREATE TABLE `products` (
   `Name` text NOT NULL,
