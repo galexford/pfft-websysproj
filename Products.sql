@@ -41,7 +41,6 @@ COMMIT;
 CREATE TABLE `products` (
   `Name` text NOT NULL,
   `ISBN` text NOT NULL,
-  `Picture` text NOT NULL,
   `Description` text NOT NULL,
   `Type` text NOT NULL,
   `Owner` text NOT NULL,
