@@ -39,12 +39,13 @@ COMMIT;
 
 
 CREATE TABLE `products` (
-  `Name` text NOT NULL,
-  `ISBN` text NOT NULL,
-  `Description` text NOT NULL,
-  `Type` text NOT NULL,
-  `Owner` text NOT NULL,
-  `Date` text NOT NULL
+  `Name` VARCHAR(100) PRIMARY KEY NOT NULL,
+  `ISBN` VARCHAR(13) NOT NULL,
+  `Description` TEXT NOT NULL,
+  `Type` VARCHAR(9) NOT NULL,
+  `OwnerFName` VARCHAR(100) NOT NULL,
+  `OwnerLName` VARCHAR(100) NOT NULL,
+  `dateAdded` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
