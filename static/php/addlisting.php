@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
 }
 echo("<br>");
 
-$sql = "INSERT INTO products (name, ISBN, Description, Type, Owner, Date)
-VALUES('$_POST[itemName], $_POST[ISBN], $_POST[itemDescription], $_POST[itemType], ')";
+$sql = "INSERT INTO products (name, ISBN, Description, Type, ownerUName, dateAdded)
+VALUES('$_POST[itemName], $_POST[ISBN], $_POST[itemDescription], $_POST[itemType], $POST[], NOW()')";
 
 ?>
