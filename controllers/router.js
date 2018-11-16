@@ -11,10 +11,10 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
         templateUrl: 'views/home.html'
     })
 
-    .when("/", {
-        controller: "addListingCtrl",
-        templateUrl: 'views/addListing.html'
-    })
+    // .when("/", {
+    //     controller: "addListingCtrl",
+    //     templateUrl: 'views/addListing.html'
+    // })
 
     // ERROR CTRL SECTION
         .when("/404", {
