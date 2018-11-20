@@ -37,14 +37,16 @@ if(isset($_POST['itemType'])) {
 // 	$name = $_POST['itemName'];
 // }
 
+$insert = "INSERT INTO products (name, ISBN, Description, Type, OwnerID, dateAdded) 
+		   VALUES('$name', '$ISBN', '$desc', '$type', '20', 'NOW()')";
 
-$sql = mysqli_query($con,"INSERT INTO products (name, ISBN, Description, Type, ownerID, dateAdded)
-VALUES('$name,
-		$ISBN, 
-		$desc, 
-		$type, 
-		20, 						//replace with user ID later
-		NOW()
-		')");
+$sqlInsert = mysqli_query($con, $insert);
+
+if(!$sqlInsert) {
+	printf("Failed to insert data!");
+}
+else {
+	printf("successfully inserted data!");
+}
 
 ?>
