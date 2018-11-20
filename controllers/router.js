@@ -26,10 +26,13 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
             controller: 'loginCtrl',
             templateUrl: 'views/login.html'
         })
-
         .when("/signup", {
             controller: 'signupCtrl',
             templateUrl: 'views/signup.html'
+        })
+        .when("/addListing", {
+            controller: 'addListingCtrl',
+            templateUrl: 'views/addListing.html'
         })
 
     // ERROR CTRL SECTION
