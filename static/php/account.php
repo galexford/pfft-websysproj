@@ -13,7 +13,7 @@ $pass = $_POST['pass'];
 
 $host = "localhost";
 $username = "root";
-$password = "newpassword";
+$password = "";
 $dbname = "bookdaddy";
 
 // Create connection
@@ -24,7 +24,9 @@ if ($conn->connect_error) {
 }else{
 	//Cannot repeat emails, and inserting values into database
      $SELECT = "SELECT email From users Where email = ? Limit 1";
-     $INSERT = "INSERT INTO users (fname, lname, dob, email, pass,) VALUES($fname, $lname, $dob, $email, $pass)";
+     
+     $INSERT = "INSERT INTO users (fName, lName, dob, email, ID, pass)
+                VALUES('$fname', '$lname', '$dob', '$email', '0', '$pass')";
      /*Prepare statement
      $stmt = $conn->prepare($SELECT);
      $stmt->bind_param("s", $email);
