@@ -30,7 +30,7 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
             controller: 'signupCtrl',
             templateUrl: 'views/signup.html'
         })
-        .when("/addListing", {
+        .when("/addlisting", {
             controller: 'addListingCtrl',
             templateUrl: 'views/addListing.html'
         })
