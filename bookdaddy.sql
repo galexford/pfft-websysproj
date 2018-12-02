@@ -51,7 +51,8 @@ CREATE TABLE `users` (
   `dob` date NOT NULL,
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `uid` int(11) NOT NULL,
-  `pass` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `pass` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `salt` varchar(64) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
