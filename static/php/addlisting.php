@@ -7,14 +7,8 @@ $dbname = "bookdaddy";
 $con=mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-} else {
-  echo "successfully connected to MySQL.";
 }
 echo("<br>");
-
-$name = "";
-$desc = "";
-$ISBN = "";
 
 
 if(isset($_POST['itemName'])) {
@@ -23,6 +17,10 @@ if(isset($_POST['itemName'])) {
 
 if(isset($_POST['ISBN'])) {
 	$ISBN = $_POST['ISBN'];
+}
+
+if(isset($_POST['price'])) {
+	$price = $_POST['price'];
 }
 
 if(isset($_POST['itemDescription'])) {
@@ -37,8 +35,9 @@ if(isset($_POST['itemType'])) {
 // 	$name = $_POST['itemName'];
 // }
 
-$insert = "INSERT INTO products (name, ISBN, Description, Type, OwnerID, dateAdded) 
-		   VALUES('$name', '$ISBN', '$desc', '$type', '20', 'NOW()')";
+
+$insert = "INSERT INTO products (name, price, ISBN, Description, Type, OwnerID, dateAdded) 
+		   VALUES('$name', '$price', '$ISBN', '$desc', '$type', '20', 'NOW()')";
 
 $sqlInsert = mysqli_query($con, $insert);
 
@@ -47,6 +46,6 @@ if(!$sqlInsert) {
 }
 else {
 	printf("successfully inserted data!");
-}
+} 
 
 ?>

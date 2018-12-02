@@ -8,7 +8,7 @@
   </head>
   <body> -->
     <!--header bar here -->
-    <form action="addlisting.php" method="post">
+    <form action="../static/php/addlisting.php" method="post">
       Item Name: <br />
         <input type="text" name="itemName"><br />
       
@@ -24,7 +24,7 @@
       <div id="price""> Price: <br /> <!-- Hidden with JS unless book is selected -->
         <input type="text" name="price" maxlength="10" size="10"><br />
       </div>
-      
+
       Item Description: <br />
              <textarea id=itemDescription" rows=10 cols=50" placeholder="Item description goes here..." required></textarea> <br />
       <input type="submit" name="submitButton"> <br />
@@ -36,56 +36,3 @@
   </html> 
 -->
 </main>
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bookdaddy";
-
-$con=mysqli_connect($servername, $username, $password, $dbname);
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-} else {
-  echo "successfully connected to MySQL.";
-}
-echo("<br>");
-
-$name = "";
-$desc = "";
-$ISBN = "";
-
-
-if(isset($_POST['itemName'])) {
-  $name = $_POST['itemName'];
-}
-
-if(isset($_POST['ISBN'])) {
-  $ISBN = $_POST['ISBN'];
-}
-
-if(isset($_POST['itemDescription'])) {
-  $desc = $_POST['itemDescription'];
-}
-
-if(isset($_POST['itemType'])) {
-  $type = $_POST['itemType'];
-}
-
-// if(isset($_POST[userID])) {
-//  $name = $_POST['itemName'];
-// }
-
-$insert = "INSERT INTO products (name, ISBN, Description, Type, OwnerID, dateAdded) 
-       VALUES('$name', '$ISBN', '$desc', '$type', '20', 'NOW()')";
-
-$sqlInsert = mysqli_query($con, $insert);
-
-if(!$sqlInsert) {
-  printf("Failed to insert data!");
-}
-else {
-  printf("successfully inserted data!");
-}
-
-?>
