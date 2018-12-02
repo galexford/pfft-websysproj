@@ -1,3 +1,0 @@
-bookDaddy.controller("productsCtrl", function () {
-
-});
