@@ -20,11 +20,11 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
         })
         .when("/login", {
             controller: 'loginCtrl',
-            templateUrl: 'views/login.php'
+            templateUrl: 'views/login.html'
         })
         .when("/signup", {
             controller: 'signupCtrl',
-            templateUrl: 'views/signup.php'
+            templateUrl: 'views/signup.html'
         })
         .when("/addListing", {
             controller: 'addListingCtrl',
