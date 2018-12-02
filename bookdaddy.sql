@@ -46,8 +46,8 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `users` (
-  `fName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `lName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `fname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `lname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `dob` date NOT NULL,
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `uid` int(11) NOT NULL,
@@ -69,7 +69,7 @@ ALTER TABLE `products`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`uid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -79,7 +79,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -89,7 +89,7 @@ ALTER TABLE `users`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`OwnerID`) REFERENCES `users` (`ID`);
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`OwnerID`) REFERENCES `users` (`uid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
