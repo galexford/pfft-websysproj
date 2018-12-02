@@ -24,7 +24,7 @@ function display($product){
 	$text += "<td>" + $user['OwnerID']+"</td>";
 	$text += "<td>" + $user['dateAdded']+"</td>";
 	$text +="</tr>";
-	return $text
+	return $text;
 }
 
 ?>
