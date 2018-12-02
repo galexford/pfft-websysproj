@@ -32,7 +32,7 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
         })
         .when("/addlisting", {
             controller: 'addListingCtrl',
-            templateUrl: 'views/addListing.html'
+            templateUrl: 'views/addListing.php'
         })
 
     // ERROR CTRL SECTION
