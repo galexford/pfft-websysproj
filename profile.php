@@ -1,18 +1,30 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bookdaddy";
+
+session_start()
 
 // Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
+try {
+    $dbname = 'bookdaddy';
+    $user = 'root';
+    $pass = '';
+    $dbconn = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $user, $pass);
+}
+catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+//logout
+if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
+	// Unset the keys from the superglobal
+	unset($_SESSION['']);
+	unset($_SESSION['']);
+	// Destroy the session cookie for this session
+	setcookie(session_name(), '', time() - 72000);
+	// Destroy the session data store
+	session_destroy();
+	$err = 'You have been logged out.';
 }
-else{
-	$user = "SELECT * FROM users WHERE id = ''";
-}
+
 ?>
 
 
@@ -23,6 +35,7 @@ else{
 		<link rel="stylesheet" href="../static/css/bootstrap.css">
 	</head>
 	<body>
+		<?php if (isset($_SESSION['email'])) :?>
 		<h1><?php echo $user['firstname'] + $user['lastname']?></h1>
 		<h2>Rensselaer Polytechnic Institute</h2>
 		<form onsubmit="return validate(this);">
@@ -44,6 +57,8 @@ else{
 			<a class="btn btn-primary" href="#" role="button">My Listings</a>
 			<a class="btn btn-primary" href="#" role="button">Wishlist</a>
 			<p>My User Rating</p>
+		<?php else: ?>
+
 	</body>
 	<script type="text/javascript" src="../static/js/profilepage.js"></script>
 </html>
