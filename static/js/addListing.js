@@ -8,13 +8,6 @@ function noShowISBN() {
 
 $(document).on("click", "#submitForm", function(e) {
   e.preventDefault();
-
-  // var name = $("#itemName").value;
-  // var type = document.querySelector('input[name = "itemType"]:checked').value;
-  // var isbn = $("#isbnText").value;
-  // var price = $("#priceFeild").value;
-  // var desc = $("itemDescription").value;
-  //{name: name, type: type, isbn: isbn, price: price, desc: desc} 
  
   var formData = $("#listingForm").serializeArray();
 
