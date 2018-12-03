@@ -10,6 +10,7 @@ $(document).on("click", "#submitForm", function(e) {
   e.preventDefault();
  
   var formData = $("#listingForm").serializeArray();
+ document.getElementById("listingForm").reset();
 
   $.ajax({
     type: 'POST',
