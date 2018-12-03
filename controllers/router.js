@@ -16,7 +16,7 @@ bookDaddy.config(function($routeProvider,$locationProvider) {
         })
         .when("/listings", {
             controller: 'listingsCtrl',
-            templateUrl: 'views/listings.php'
+            templateUrl: 'views/listings.html'
         })
         .when("/login", {
             controller: 'loginCtrl',
