@@ -31,7 +31,7 @@ if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 
 		<link rel="stylesheet" href="../static/css/bootstrap.css">
 	</head>
 	<body>
-		<?php if (isset($_SESSION['email'])) :?>
+		<?php if (isset($_SESSION['username'])) :?>
 		<h1><?php echo $user['firstname'] + $user['lastname']?></h1>
 		<h2>Rensselaer Polytechnic Institute</h2>
 		<form onsubmit="return validate(this);">
