@@ -11,7 +11,7 @@ catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
 //logout
-if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
+if (isset($_SESSION['username']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
 	// Unset the keys from the superglobal
 	unset($_SESSION['']);
 	unset($_SESSION['']);
