@@ -1,11 +1,27 @@
 /*Home Page*/
 
+/*.bg-light {*/
+    /*background-color: #ef5350;*/
+/*}*/
+
 #text{
     text-align: center;
 }
 
-.centered{
+#products{
     text-align: center;
+}
+
+#login{
+    text-align: center;
+    margin-top: 10%;
+
+}
+
+#about{
+    margin: 10%;
+    text-align: justify;
+    font-size: 20px;
 }
 
 /* change color to red */
