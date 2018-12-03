@@ -32,6 +32,7 @@ USE `bookdaddy`;
 
 CREATE TABLE `products` (
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `price` INT(10) COLLATE utf8_unicode_ci NOT NULL,
   `ISBN` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Type` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
