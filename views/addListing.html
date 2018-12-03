@@ -1,53 +1,32 @@
-<main ng-controller="addListingCtrl.js">
+    <form id="listingForm">
 
-<!-- 
-<html>
-  <head> 
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  </head>
-  <body> -->
-    <!--header bar here -->
-    <form id="listingForm" action="/fipro/static/php/addlisting.php" method="post">
       Item Name: <br />
-        <input type="text" name="itemName"><br />
+
+        <input id="itemName" type="text" name="itemName"><br />
       
       Item Type: <br />
+
         <input class="typeButton" type="radio" name="itemType" value="book" onclick="showISBN();" required> Book <br />
-        <input clacc="typeButton" type="radio" name="itemType" value="furniture" onclick="noShowISBN();" required> Furniture <br />
+        <input class="typeButton" type="radio" name="itemType" value="furniture" onclick="noShowISBN();" required> Furniture <br />
         <input class="typeButton" type="radio" name="itemType" value="other" onclick="noShowISBN();" required> Other <br />
       
-      <div id="isbn" style="display:none;"> ISBN Number: <br /> <!-- Hidden with JS unless book is selected -->
-        <input type="text" name="ISBN" maxlength="13" size="13"><br />
+      <div id="isbn" style="display:none;"> ISBN: <br /> <!-- Hidden with JS unless book is selected -->
+
+        <input id="isbnText" type="text" name="ISBN" maxlength="13" size="13"><br />
+
       </div>
 
-      <div id="price"> Price: <br />
-        <input type="text" name="price" maxlength="10" size="10"><br />
+      <div id="price"> Price ($): <br />
+
+        <input id="priceFeild" type="text" name="price" maxlength="10" size="10"><br />
+
       </div>
 
-      Item Description: <br />
+      <div id="desc"> Item Description: <br />
+            
              <textarea id="itemDescription" name="itemDescription" rows=10 cols=50" placeholder="Item description goes here..." required></textarea> <br />
+      
+      </div>
+
       <input type="submit" name="submitButton" id="submitForm"> <br />
     </form>
-
-
-<script type=text/javascript> 
-  $(function() {
-    $("#submitForm").click(function(e) {
-      e.preventDefault();
-
-      $.ajax({
-        type: 'post',
-        url: '/fipro/static/php/addlisting.php',
-        data: $("#listingForm").serialize(),
-        success:: function() {
-          alert('successfully submitted a listing!');
-        }
-      })
-    })
-  })
-</script>
-
-</main>
-
-
