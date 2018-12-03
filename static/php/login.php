@@ -47,25 +47,3 @@ if (isset($_SESSION['username']) && isset($_POST['logout']) && $_POST['logout'] 
 
 
 ?>
-<!doctype html>
-<html>
-<head>
-  <title>Login</title>
-</head>
-<body>
-  <?php if (isset($_SESSION['username'])): ?>
-  <h1>Welcome, <?php echo htmlentities($_SESSION['username']) echo htmlentities($_SESSION['']) ?></h1>
-  <form method="post" action="login.php">
-    <input name="logout" type="submit" value="Logout" />
-  </form>
-  <?php else: ?>
-  <h1>Login</h1>
-  <?php if (isset($err)) echo "<p>$err</p>" ?>
-  <form method="post" action="login.php">
-    <label for="username">Email: </label><input type="text" name="username" />
-    <label for="pass">Password: </label><input type="password" name="pass" />
-    <input name="login" type="submit" value="Login" />
-  </form>
-  <?php endif; ?>
-</body>
-</html>
