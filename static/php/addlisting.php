@@ -11,41 +11,69 @@ if (mysqli_connect_errno()) {
 echo("<br>");
 
 
-if(isset($_POST['name'])) {
-	$name = $_POST['name'];
-}
 
-if(isset($_POST['type'])) {
-	$type = $_POST['type'];
-}
+$formData = $_POST['formData'];
+//echo($formData);
 
-if(isset($_POST['isbn'])) {
-	$ISBN = $_POST['isbn'];
-}
+$isbn = ""; 
 
-if(isset($_POST['price'])) {
-	$price = $_POST['price'];
-}
+$name = $formData[0]["value"];
+$type = $formData[1]["value"];
+$isbn = $formData[2]["value"];
+$price = (int)$formData[3]["value"];
+$desc = $formData[4]["value"];
 
-if(isset($_POST['desc'])) {
-	$desc = $_POST['desc'];
-}
+
+// if(isset($_POST['name'])) {
+// 	$name = $_POST['name'];
+// }
+
+// if(isset($_POST['type'])) {
+// 	$type = $_POST['type'];
+// }
+
+// if(isset($_POST['isbn'])) {
+// 	$ISBN = $_POST['isbn'];
+// }
+
+// if(isset($_POST['price'])) {
+// 	$price = $_POST['price'];
+// }
+
+// if(isset($_POST['desc'])) {
+// 	$desc = $_POST['desc'];
+// }
+
+
+echo($name);
+echo("<br>");
+echo($type);
+echo("<br>");
+echo($price);
+echo("<br>");
+echo($isbn);
+echo("<br>");
+echo($desc);
+echo("<br>");
 
 // if(isset($_POST[userID])) {
 // 	$name = $_POST['itemName'];
 // }
 
+$date = date('Y-m-d');
 
-$insert = "INSERT INTO products (name, price, ISBN, Description, Type, OwnerID, dateAdded) 
-		   VALUES('$name', '$price', '$ISBN', '$desc', '$type', '20', 'NOW()')";
+$insert = "INSERT INTO products (name, price, ISBN, Description, Type, UID, dateAdded) 
+		   VALUES('$name', '$price', '$isbn', '$desc', '$type', '1', '$date')";
 
 $sqlInsert = mysqli_query($con, $insert);
 
+
 if(!$sqlInsert) {
-	printf("Failed to insert data!");
+	print("Failed to insert data!");
+	echo mysqli_errno($con) . ": " . mysqli_error($con) . "\n";
 }
 else {
-	printf("successfully inserted data!");
+	print("successfully inserted data!");
 } 
 
 ?>
