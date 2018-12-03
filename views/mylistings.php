@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 else{
-	$user = "SELECT * FROM products WHERE OwnerID =  ";
+	$user = "SELECT * FROM products WHERE UID =  ";
 }
 
 function display($product){
