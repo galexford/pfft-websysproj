@@ -23,39 +23,6 @@ $isbn = $formData[2]["value"];
 $price = (int)$formData[3]["value"];
 $desc = $formData[4]["value"];
 
-
-// if(isset($_POST['name'])) {
-// 	$name = $_POST['name'];
-// }
-
-// if(isset($_POST['type'])) {
-// 	$type = $_POST['type'];
-// }
-
-// if(isset($_POST['isbn'])) {
-// 	$ISBN = $_POST['isbn'];
-// }
-
-// if(isset($_POST['price'])) {
-// 	$price = $_POST['price'];
-// }
-
-// if(isset($_POST['desc'])) {
-// 	$desc = $_POST['desc'];
-// }
-
-
-echo($name);
-echo("<br>");
-echo($type);
-echo("<br>");
-echo($price);
-echo("<br>");
-echo($isbn);
-echo("<br>");
-echo($desc);
-echo("<br>");
-
 // if(isset($_POST[userID])) {
 // 	$name = $_POST['itemName'];
 // }
