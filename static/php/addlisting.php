@@ -11,24 +11,24 @@ if (mysqli_connect_errno()) {
 echo("<br>");
 
 
-if(isset($_POST['itemName'])) {
-	$name = $_POST['itemName'];
+if(isset($_POST['name'])) {
+	$name = $_POST['name'];
 }
 
-if(isset($_POST['ISBN'])) {
-	$ISBN = $_POST['ISBN'];
+if(isset($_POST['type'])) {
+	$type = $_POST['type'];
+}
+
+if(isset($_POST['isbn'])) {
+	$ISBN = $_POST['isbn'];
 }
 
 if(isset($_POST['price'])) {
 	$price = $_POST['price'];
 }
 
-if(isset($_POST['itemDescription'])) {
-	$desc = $_POST['itemDescription'];
-}
-
-if(isset($_POST['itemType'])) {
-	$type = $_POST['itemType'];
+if(isset($_POST['desc'])) {
+	$desc = $_POST['desc'];
 }
 
 // if(isset($_POST[userID])) {
