@@ -1,11 +1,7 @@
-
-var isbn = document.getElementById("isbn");
-	
 function showISBN() {
-	isbn.style.display = 'block';
+	document.getElementById("isbn").style.display = 'block';
 }
 
 function noShowISBN() {
-	isbn.style.display = 'none';
+	document.getElementById("isbn").style.display = 'none';
 }
-
