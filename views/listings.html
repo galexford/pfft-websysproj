@@ -1,25 +1,17 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-3" id="text"> My Listings</h1>
-        	<div id = "bookDiv"> 
+        	<div id = "myBookDiv"> 
 
         	</div>
 
-        	<div id = "furnDiv">
+        	<div id = "myFurnDiv">
 
         	</div>
         	
-        	<div id = "otherDiv">
+        	<div id = "myOtherDiv">
 
         	</div>
 
     </div>
 </div>
-
-<script type="text/javascript">
-    $document.ready(function() {
-        $.post("listings.php", function() {
-            $("#bookDiv").html();
-        });
-    });
-</script>
