@@ -20,7 +20,7 @@ function displaymy(){
 try {
   $dbname = 'bookdaddy';
   $user = 'root';
-  $pass = 'newpassword';
+  $pass = '';
   $dbconn = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $user, $pass);
 }
 catch (Exception $e) {
@@ -34,6 +34,7 @@ if (isset($_POST['login']) && $_POST['login'] == 'Login') {
   $res = $salt_stmt->fetch();
   $salt = ($res) ? $res['salt'] : '';
   $salted = hash('sha256', $salt . $_POST['pass']);
+
 
   $login_stmt = $dbconn->prepare('SELECT username, uid FROM users WHERE username=:username AND pass=:pass');
   echo ($login_stmt->fetch());
