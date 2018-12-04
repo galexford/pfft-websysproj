@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -23,14 +25,12 @@ $isbn = $formData[2]["value"];
 $price = (int)$formData[3]["value"];
 $desc = $formData[4]["value"];
 
-// if(isset($_POST[userID])) {
-// 	$name = $_POST['itemName'];
-// }
+$uid = $_SESSION['uid'];
 
 $date = date('Y-m-d');
 
 $insert = "INSERT INTO products (name, price, ISBN, Description, Type, UID, dateAdded) 
-		   VALUES('$name', '$price', '$isbn', '$desc', '$type', '1', '$date')";
+		   VALUES('$name', '$price', '$isbn', '$desc', '$type', '$uid', '$date')";
 
 $sqlInsert = mysqli_query($con, $insert);
 
