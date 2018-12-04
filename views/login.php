@@ -7,7 +7,7 @@ function display($table){
 }
 
 function displaymy(){
-  $sql = "SELECT * FROM products INNER JOIN users on products.OwnerID = users.uid ORDER BY ISBN WHERE OwnerID = $_SESSION['uid']";
+  $sql = "SELECT * FROM products INNER JOIN users on products.OwnerID = users.uid ORDER BY ISBN WHERE OwnerID = ".$_SESSION[uid];
   mysqli_select_db($conn, $dbname);
   $results = mysqli_query($conn, $sql);
 
@@ -20,7 +20,7 @@ function displaymy(){
 try {
   $dbname = 'bookdaddy';
   $user = 'root';
-  $pass = 'rodeo900Japan';
+  $pass = 'newpassword';
   $dbconn = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $user, $pass);
 }
 catch (Exception $e) {
@@ -43,9 +43,9 @@ if (isset($_POST['login']) && $_POST['login'] == 'Login') {
   if ($user = $login_stmt->fetch()) {
     $_SESSION['username'] = $user['username'];
 	   $_SESSION['uid'] = $user['uid'];
-
+     header('Location: ../#/listings');
   } else {
-    $err = 'Incorrect username or password.';
+    print_r('Incorrect username or password.');
   }
 }
 
@@ -60,42 +60,4 @@ if (isset($_SESSION['username']) && isset($_POST['logout']) && $_POST['logout'] 
   $err = 'You have been logged out.';
 }
 
-
 ?>
-<!doctype html>
-<html>
-<head>
-  <title>Login</title>
-</head>
-<body>
-  <?php if (isset($_SESSION['username'])): ?>
-  <h1>Welcome, <?php echo htmlentities($_SESSION['username']) ?></h1>
-    <h2>Rensselaer Polytechnic Institute</h2>
-    <form onsubmit="return validate(this);">
-      <fieldset>
-        <div class="form-group">
-            <h4>Change Password</h4>
-            <input id="currentpassword" type="password" class="form-control" placeholder="Current Password" required>
-            <br>
-            <input id="newpassword1" type="password" class="form-control" placeholder="New Password" required>
-            <br>
-            <input id="newpassword2" type="password" class="form-control" placeholder="Re-enter New Password" required>
-            <br>
-            <button type="submit" class="btn btn-primary" id="password">Change Password</button>
-          </div>
-      </fieldset>
-    </form>
-      <br>
-      <br>
-      <button class="btn btn-primary" role="button" onclick="displaymy()">My Listings</button>
-  <?php else: ?>
-  <h1>Login</h1>
-  <?php if (isset($err)) echo "<p>$err</p>" ?>
-  <form method="post" action="login.php">
-    <label for="username">Email: </label><input type="text" name="username" />
-    <label for="pass">Password: </label><input type="password" name="pass" />
-    <input name="login" type="submit" value="Login" />
-  </form>
-  <?php endif; ?>
-</body>
-</html>
