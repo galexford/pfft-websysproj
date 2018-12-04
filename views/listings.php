@@ -5,24 +5,43 @@ $password = "";
 $dbname = "bookdaddy";
 
 // Create connection
+//$conn =  new mysqli($host, $username, $password);
 
-$conn =  new mysqli($host, $username, $password);
-
-if(!$conn){
-	die("Could not connect: ".mysql_error());
+function books($con) {
+	$getBook = $con->query('SELECT * FROM products WHERE type = "book"');
+	foreach ($getBook as $row) {
+		echo '<pre>';
+		printf("%s", $row['name']);
+		printf("%s", $row['price']);
+		echo '</pre>';
+	}
 }
 
-$sql = "SELECT * FROM products INNER JOIN users on products.OwnerID = users.uid ORDER BY ISBN";
-mysqli_select_db($conn, $dbname);
-$results = mysqli_query($conn, $sql);
+try {
+	$con = new PDO("mysql:dbname=$dbname;host=$host", $root, $password);
+	$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-function display($user){
-	$text = "<tr><td>".$user['name']."</td><td>".$user['ISBN']."</td><td>".$user['Description']."</td><td>".$user['Type']."</td><td>".$user['fname'].$user['lname']."</td><td>".$user['dateAdded']."</td></tr>";
-	return $text;
+	books($con);
+
+} catch(PDOException $e) {
+	echo 'ERROR: ' .  $e->getMessage();
 }
+
+// if(!$conn){
+// 	die("Could not connect: ".mysql_error());
+// }
+
+// $sql = "SELECT * FROM products";
+// mysqli_select_db($conn, $dbname);
+// $results = mysqli_query($conn, $sql);
+
+// function display($user){
+// 	$text = "<tr><td>".$user['name']."</td><td>".$user['ISBN']."</td><td>".$user['Description']."</td><td>".$user['Type']."</td><td>".$user['fname'].$user['lname']."</td><td>".$user['dateAdded']."</td></tr>";
+// 	return $text;
+// }
 
 ?>
-
+<!-- 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -42,4 +61,4 @@ function display($user){
 			}
 		?>
 	</table>
-</html>
+</html> -->
