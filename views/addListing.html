@@ -1,14 +1,4 @@
-<main ng-controller="addListingCtrl.js">
-
-<!-- 
-<html>
-  <head> 
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  </head>
-  <body> -->
-    <!--header bar here -->
-    <form id="listingForm" action="../static/php/addlisting.php" method="post">
+    <form id="listingForm">
       Item Name: <br />
         <input type="text" name="itemName"><br />
       
@@ -27,12 +17,5 @@
 
       Item Description: <br />
              <textarea id=itemDescription" rows=10 cols=50" placeholder="Item description goes here..." required></textarea> <br />
-      <input type="submit" name="submitButton"> <br />
-     </form>
-
-    <!--add footer bar here (?) -->
-<!--
-  </body>
-  </html> 
--->
-</main>
+      <input type="submit" name="submitButton" id="submitForm"> <br />
+    </form>
