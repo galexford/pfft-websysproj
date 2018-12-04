@@ -48,7 +48,7 @@
                                ':pass' => $salted,
                                ':salt' => $salt
                                 ));
-          $msg = "Account created.";
+          echo "Account created.";
           header('Location: ../#/login');
        }
         }
