@@ -1,21 +1,44 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3" id="text">Add a Listing</h1>
+    </div>
+</div>
+
+<div id="login">
+
     <form id="listingForm">
-      Item Name: <br />
-        <input type="text" name="itemName"><br />
-      
-      Item Type: <br />
-        <input id="bookButton" type="radio" name="itemType" value="book" onclick="showISBN();" required> Book <br />
-        <input id ="furnitureButton" type="radio" name="itemType" value="furniture" onclick="noShowISBN();" required> Furniture <br />
-        <input id="otherButton" type="radio" name="itemType" value="other" onclick="noShowISBN();" required> Other <br />
-      
-      <div id="isbn" style="display:none;"> ISBN Number: <br /> <!-- Hidden with JS unless book is selected -->
-        <input type="text" name="ISBN" maxlength="13" size="13"><br />
-      </div>
+        Item Name:
+        <input type="text" name="itemName">
 
-      <div id="price""> Price: <br /> <!-- Hidden with JS unless book is selected -->
-        <input type="text" name="price" maxlength="10" size="10"><br />
-      </div>
+        <br>
+        <br>
 
-      Item Description: <br />
-             <textarea id=itemDescription" rows=10 cols=50" placeholder="Item description goes here..." required></textarea> <br />
-      <input type="submit" name="submitButton" id="submitForm"> <br />
+        Item Type:
+        <input id="bookButton" type="radio" name="itemType" value="book" onclick="showISBN();" required> Book
+        <input id ="furnitureButton" type="radio" name="itemType" value="furniture" onclick="noShowISBN();" required> Furniture
+        <input id="otherButton" type="radio" name="itemType" value="other" onclick="noShowISBN();" required> Other
+
+        <br>
+        <br>
+
+        <div id="isbn" style="display:none;"> ISBN Number:  <!-- Hidden with JS unless book is selected -->
+            <input type="text" name="ISBN" maxlength="13" size="13">
+        </div>
+
+        <br>
+
+        <div id="price""> Price:  <!-- Hidden with JS unless book is selected -->
+        <input type="text" name="price" maxlength="10" size="10">
+        </div>
+
+        <br>
+
+        Item Description: <br />
+        <textarea id=itemDescription" rows=10 cols=50" placeholder="Item description goes here..." required></textarea> <br />
+        <input type="submit" name="submitButton" id="submitForm"> <br />
     </form>
+
+
+</div>
+
+
