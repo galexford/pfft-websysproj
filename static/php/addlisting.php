@@ -15,7 +15,6 @@ echo("<br>");
 
 
 $formData = $_POST['formData'];
-//echo($formData);
 
 $isbn = ""; 
 
