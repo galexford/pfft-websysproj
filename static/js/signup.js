@@ -16,7 +16,7 @@ $(document).on("click", "#submitUser", function(e) {
     data: {fname: fName, lname: lName, username: username, dob: dob, pass: pass, passconfirm: passconfirm},
     success: function() {
       alert('Successfully registered!');
-      document.getElementById("listingForm").reset();
+      document.getElementById("submitUser").reset();
     },
     error: function (err) {
       console.log(err);
