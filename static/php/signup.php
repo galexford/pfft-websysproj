@@ -11,7 +11,6 @@
     catch (Exception $e) {
     echo "Error: " . $e->getMessage();
     }
-try {
         // Validate fields
         // @TODO: Also check to see if duplicate usernames exist
         if (!isset($_POST['fname']) 
@@ -26,16 +25,16 @@ try {
             || empty($_POST['username']) 
             || empty($_POST['pass']) 
             || empty($_POST['passconfirm'])) {
-          echo "Please fill in all form fields.";
+          $msg = "Please fill in all form fields.";
         }
         else if ($_POST['pass'] !== $_POST['passconfirm']) {
           $msg = "Passwords must match.";
         }
         else {
-			$email = $_POST["username"];
-			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  				echo "Invalid email format"; 
-			}
+      $email = $_POST["username"];
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $msg = "Invalid email format"; 
+      }
             else{
                 // Generate random salt
                 $salt = hash('sha256', uniqid(mt_rand(), true));
@@ -45,20 +44,14 @@ try {
                 $stmt = $dbconn->prepare("INSERT INTO users(fname, lname, dob, username, pass, salt)
                                   VALUES (:fname, :lname, :dob, :username, :pass, :salt)");
                 $stmt->execute(array(
-                	 ':fname'    => $_POST['fname'],
-                	 ':lname'    => $_POST['lname'],
-                	 ':dob'      => $_POST['dob'],
-                	 ':username' => $_POST['username'],
+                   ':fname'    => $_POST['fname'],
+                   ':lname'    => $_POST['lname'],
+                   ':dob'      => $_POST['dob'],
+                   ':username' => $_POST['username'],
                                    ':pass' => $salted,
                                    ':salt' => $salt
                                     ));
-                echo "Account created.";
+                $msg = "Account created.";
             }
         }
-}catch(PDOException $e) {
-    echo 'ERROR: ' .  $e->getMessage();
-}
-
-    //echo $msg;
-
 ?>
