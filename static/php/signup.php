@@ -13,6 +13,7 @@
     }
         // Validate fields
         // @TODO: Also check to see if duplicate usernames exist
+    
         if (!isset($_POST['fname']) 
             || !isset($_POST['lname']) 
             || !isset($_POST['dob']) 
@@ -25,7 +26,7 @@
             || empty($_POST['username']) 
             || empty($_POST['pass']) 
             || empty($_POST['passconfirm'])) {
-          $msg = "Please fill in all form fields.";
+          echo( "Please fill in all form fields.");
         }
         else if ($_POST['pass'] !== $_POST['passconfirm']) {
           $msg = "Passwords must match.";
@@ -48,9 +49,9 @@
                    ':lname'    => $_POST['lname'],
                    ':dob'      => $_POST['dob'],
                    ':username' => $_POST['username'],
-                                   ':pass' => $salted,
-                                   ':salt' => $salt
-                                    ));
+                   ':pass' => $salted,
+                   ':salt' => $salt
+                 ));
                 $msg = "Account created.";
             }
         }
