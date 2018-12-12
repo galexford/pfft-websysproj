@@ -36,7 +36,10 @@
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           $msg = "Invalid email format"; 
       }
-            else{
+      else if ($email[-1] != "u" || $email[-2] != "d" || $email[-3] != "e"){
+             $msg = "Must be .edu email";
+      }
+      else{
                 // Generate random salt
                 $salt = hash('sha256', uniqid(mt_rand(), true));
                 // Apply salt before hashing
@@ -54,5 +57,5 @@
                  ));
                 $msg = "Account created.";
             }
-        }
+       }
 ?>
